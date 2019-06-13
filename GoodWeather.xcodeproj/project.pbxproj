@@ -56,8 +56,8 @@
 		D0F88B8422B2549300FEA634 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
-				D0F88B9722B27ED200FEA634 /* Controllers */,
 				D0F88B8522B2549300FEA634 /* AppDelegate.swift */,
+				D0F88B9722B27ED200FEA634 /* Controllers */,
 				D0F88B8922B2549300FEA634 /* Main.storyboard */,
 				D0F88B8C22B2549500FEA634 /* Assets.xcassets */,
 				D0F88B8E22B2549500FEA634 /* LaunchScreen.storyboard */,
