@@ -21,11 +21,25 @@ class WeatherListTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "AddWeatherCityViewController":
+            self.prepareSegueForAddWeatherCityViewController(segue: segue)
+        case "SettingsTableViewController":
+            self.prepareSegueForSettingsTableViewController(segue: segue)
+        default:
+            break
+        }
+        
+    }
+    
+    private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         if let nvc = segue.destination as? UINavigationController, let addWeatherVC = nvc.viewControllers.first as? AddWeatherCityViewController {
             addWeatherVC.delegate = self
         }
     }
-    
+     private func prepareSegueForSettingsTableViewController(segue: UIStoryboardSegue) {
+        
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
