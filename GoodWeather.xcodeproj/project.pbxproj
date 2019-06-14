@@ -14,6 +14,9 @@
 		D0F88B9922B27EFB00FEA634 /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88B9822B27EFB00FEA634 /* WeatherListTableViewController.swift */; };
 		D0F88B9B22B27F3900FEA634 /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88B9A22B27F3900FEA634 /* AddWeatherCityViewController.swift */; };
 		D0F88B9E22B2863700FEA634 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88B9D22B2863700FEA634 /* WeatherCell.swift */; };
+		D0F88BA322B39BC700FEA634 /* WebSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88BA222B39BC700FEA634 /* WebSevice.swift */; };
+		D0F88BA722B39FDA00FEA634 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88BA622B39FDA00FEA634 /* WeatherListViewModel.swift */; };
+		D0F88BAA22B3B15300FEA634 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F88BA922B3B15300FEA634 /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D0F88B9822B27EFB00FEA634 /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
 		D0F88B9A22B27F3900FEA634 /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
 		D0F88B9D22B2863700FEA634 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		D0F88BA222B39BC700FEA634 /* WebSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSevice.swift; sourceTree = "<group>"; };
+		D0F88BA622B39FDA00FEA634 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		D0F88BA922B3B15300FEA634 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 		D0F88B8422B2549300FEA634 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D0F88BA822B3B13D00FEA634 /* Extension */,
+				D0F88BA522B39FC200FEA634 /* ViewModels */,
 				D0F88B8522B2549300FEA634 /* AppDelegate.swift */,
+				D0F88BA122B39BA900FEA634 /* Service */,
 				D0F88B9C22B2861500FEA634 /* CustomCell */,
 				D0F88B9722B27ED200FEA634 /* Controllers */,
 				D0F88B8922B2549300FEA634 /* Main.storyboard */,
@@ -84,6 +93,30 @@
 				D0F88B9D22B2863700FEA634 /* WeatherCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		D0F88BA122B39BA900FEA634 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D0F88BA222B39BC700FEA634 /* WebSevice.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		D0F88BA522B39FC200FEA634 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0F88BA622B39FDA00FEA634 /* WeatherListViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0F88BA822B3B13D00FEA634 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0F88BA922B3B15300FEA634 /* Double+Extensions.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F88BA322B39BC700FEA634 /* WebSevice.swift in Sources */,
 				D0F88B9E22B2863700FEA634 /* WeatherCell.swift in Sources */,
+				D0F88BAA22B3B15300FEA634 /* Double+Extensions.swift in Sources */,
 				D0F88B9922B27EFB00FEA634 /* WeatherListTableViewController.swift in Sources */,
+				D0F88BA722B39FDA00FEA634 /* WeatherListViewModel.swift in Sources */,
 				D0F88B9B22B27F3900FEA634 /* AddWeatherCityViewController.swift in Sources */,
 				D0F88B8622B2549300FEA634 /* AppDelegate.swift in Sources */,
 			);

@@ -17,3 +17,11 @@ class WeatherCell: UITableViewCell {
         super.awakeFromNib()
     }
 }
+extension WeatherCell {
+    
+    func configure(_ vm: WeatherViewModel) {
+        self.cityNameLabel.text = vm.name
+        self.temperaturaLabel.text = "\(vm.currentTemperature.temperature.formatAsDegree)"
+    }
+    
+}
