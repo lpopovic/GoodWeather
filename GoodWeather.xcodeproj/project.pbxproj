@@ -59,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F88B8422B2549300FEA634 /* GoodWeather */,
+				D0F88BAB22B3B56100FEA634 /* Images */,
 				D0F88B8322B2549300FEA634 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,10 +75,9 @@
 		D0F88B8422B2549300FEA634 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
-				D0F88BAB22B3B56100FEA634 /* Images */,
+				D0F88B8522B2549300FEA634 /* AppDelegate.swift */,
 				D0F88BA822B3B13D00FEA634 /* Extension */,
 				D0F88BA522B39FC200FEA634 /* ViewModels */,
-				D0F88B8522B2549300FEA634 /* AppDelegate.swift */,
 				D0F88BA122B39BA900FEA634 /* Service */,
 				D0F88B9C22B2861500FEA634 /* CustomCell */,
 				D0F88B9722B27ED200FEA634 /* Controllers */,

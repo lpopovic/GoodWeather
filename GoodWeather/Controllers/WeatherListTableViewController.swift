@@ -12,10 +12,14 @@ import UIKit
 class WeatherListTableViewController: UITableViewController {
     
     private var weatherListViewModel = WeatherListViewModel()
-    
+    private var currentTemperatureUnit: Unit!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let value = UserDefaults.standard.value(forKey: "unit") as? String {
+            self.currentTemperatureUnit = Unit(rawValue: value)!
+        }else {
+            self.currentTemperatureUnit = .fahrenheit
+        }
         self.navigationController?.navigationBar.prefersLargeTitles = true
      
     }
@@ -38,7 +42,9 @@ class WeatherListTableViewController: UITableViewController {
         }
     }
      private func prepareSegueForSettingsTableViewController(segue: UIStoryboardSegue) {
-        
+        if let nvc = segue.destination as? UINavigationController, let settingVC = nvc.viewControllers.first as? SettingsTableViewController {
+            settingVC.delegate = self
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,6 +76,18 @@ extension WeatherListTableViewController: AddWeatherDelegate {
         
         self.weatherListViewModel.addWeatherViewModel(vm)
         self.tableView.reloadData()
+    }
+
+}
+
+extension WeatherListTableViewController: SettingsDelegate {
+  
+    func settingsDone(vm: SettingViewModel) {
+        if self.currentTemperatureUnit.rawValue != vm.selectedUnit.rawValue {
+            self.weatherListViewModel.updateUnit(to: vm.selectedUnit)
+            self.tableView.reloadData()
+            self.currentTemperatureUnit = Unit(rawValue: vm.selectedUnit.rawValue)
+        }
     }
     
     
