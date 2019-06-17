@@ -11,13 +11,20 @@ import Foundation
 struct WeatherListViewModel {
     
     private var weatherViewModels: [WeatherViewModel]
+    private var currentTemperatureUnit: Unit
 }
 
 extension WeatherListViewModel {
     
     init() {
-
+        
         self.weatherViewModels = []
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: "unit") as? String {
+            self.currentTemperatureUnit = Unit(rawValue: value) ?? .fahrenheit
+        } else {
+           self.currentTemperatureUnit = .fahrenheit
+        }
     }
     
     
@@ -28,37 +35,16 @@ extension WeatherListViewModel {
     func numberOfRows(_ section: Int) -> Int {
         return self.weatherViewModels.count
     }
-    func modelAt(_ index: Int) -> WeatherViewModel {
-        return self.weatherViewModels[index]
+    func modelAt(_ index: Int) -> (WeatherViewModel, Unit) {
+        return (self.weatherViewModels[index],currentTemperatureUnit)
     }
     
     mutating func updateUnit(to unit: Unit) {
-     
-            switch unit {
-            case .celsius:
-                self.toCelsius()
-            case . fahrenheit:
-                self.toFahrenheit()
-            }
+        
+        self.currentTemperatureUnit = unit
+    }
+    
 
-    }
-    
-   mutating private func toCelsius() {
-    
-       weatherViewModels = weatherViewModels.map { vm in
-            var weatherModel = vm
-            weatherModel.currentTemperature.temperature = (weatherModel.currentTemperature.temperature - 32) * 5/9
-            return weatherModel
-        }
-    }
-    
-    mutating private func toFahrenheit() {
-        weatherViewModels = weatherViewModels.map { vm in
-            var weatherModel = vm
-            weatherModel.currentTemperature.temperature = (weatherModel.currentTemperature.temperature * 5/9) + 32 
-            return weatherModel
-        }
-    }
     
 }
 
@@ -71,6 +57,27 @@ struct WeatherViewModel: Codable {
         case name = "name"
         case currentTemperature = "main"
       
+    }
+    
+    private func toCelsius() -> Double {
+        
+        return (currentTemperature.temperature - 32) * 5/9
+        
+    }
+    
+    private func toFahrenheit() -> Double  {
+        return currentTemperature.temperature
+    }
+    
+    func returnTemperature(currentTemperatureUnit: Unit) -> Double {
+        
+        switch currentTemperatureUnit {
+        case .celsius:
+            return toCelsius()
+        case .fahrenheit:
+            return toFahrenheit()
+        }
+        
     }
 }
 

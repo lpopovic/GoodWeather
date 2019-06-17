@@ -30,13 +30,8 @@ class AddWeatherCityViewController: UIViewController {
         
         if let city = cityNameTextField.text {
             
-            // get the default settings for temperature
-            let userDefaults = UserDefaults.standard
-            var unit = "imperial"
-            if let value = userDefaults.value(forKey: "unit") as? String {
-                unit = value
-            }
-            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&APPID=2c2565d5d855a85a3f2ffe59315a3d8e&units=\(unit)")!
+            
+            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&APPID=2c2565d5d855a85a3f2ffe59315a3d8e&units=imperial")!
             
             let weatherResource = Resource<WeatherViewModel>(url: weatherURL) { (data)in
                 
