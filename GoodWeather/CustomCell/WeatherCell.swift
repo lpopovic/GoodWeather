@@ -20,7 +20,7 @@ class WeatherCell: UITableViewCell {
 extension WeatherCell {
     
     func configure(_ vm: WeatherViewModel, _ currentTemperauteUnit: Unit) {
-        self.cityNameLabel.text = vm.name
+        self.cityNameLabel.text = vm.name.value
         self.temperaturaLabel.text = "\(vm.returnTemperature(currentTemperatureUnit: currentTemperauteUnit).formatAsDegree)"
     }
     

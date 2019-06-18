@@ -25,7 +25,9 @@ final class WebService {
 
                 }
             }else {
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
             
         }.resume()
