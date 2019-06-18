@@ -8,13 +8,10 @@
 
 import Foundation
 
-struct WeatherListViewModel {
+class WeatherListViewModel {
     
-    private(set) var weatherViewModels: [WeatherViewModel]
+    private(set) var weatherViewModels: [WeatherViewModel] = []
     private var currentTemperatureUnit: Unit
-}
-
-extension WeatherListViewModel {
     
     init() {
         
@@ -28,7 +25,7 @@ extension WeatherListViewModel {
     }
     
     
-    mutating func addWeatherViewModel(_ vm: WeatherViewModel) {
+    func addWeatherViewModel(_ vm: WeatherViewModel) {
         
         self.weatherViewModels.append(vm)
     }
@@ -41,7 +38,7 @@ extension WeatherListViewModel {
         
     }
     
-    mutating func updateUnit(to unit: Unit) {
+    func updateUnit(to unit: Unit) {
         self.currentTemperatureUnit = unit
         
     }
