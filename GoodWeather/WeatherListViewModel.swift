@@ -10,7 +10,7 @@ import Foundation
 
 struct WeatherListViewModel {
     
-    private var weatherViewModels: [WeatherViewModel]
+    private(set) var weatherViewModels: [WeatherViewModel]
     private var currentTemperatureUnit: Unit
 }
 
