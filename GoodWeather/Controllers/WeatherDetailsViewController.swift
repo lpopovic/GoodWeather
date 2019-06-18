@@ -21,8 +21,7 @@ class WeatherDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setupViewModelBindings()
-        
-        
+
     }
     
     func setupViewModelBindings() {
