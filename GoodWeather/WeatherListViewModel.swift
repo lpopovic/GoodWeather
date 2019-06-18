@@ -11,7 +11,7 @@ import Foundation
 class WeatherListViewModel {
     
     private(set) var weatherViewModels: [WeatherViewModel] = []
-    private var currentTemperatureUnit: Unit
+    private(set) var currentTemperatureUnit: Unit
     
     init() {
         
